@@ -32,15 +32,19 @@ paragraph.style("background-color", "lightblue").style("color", "green")
 * Explicar que cada crida de cada funció retorna la selecció
 
 * Crear un nou paràgraf i assignar-li text
-```d3.select("body”)
+```
+d3.select("body”)
 		.append("p”)
-		.text("Hola bon dia! Sóc un paràgraf creat en D3!")```
+		.text("Hola bon dia! Sóc un paràgraf creat en D3!")
+		```
 
 * Crear variable amb el body
 ```var body = d3.select("body")```
 
 * Crear un ```h1```
-```body.append("h1")
-body.select("h1").text("Títol!")```
+```
+body.append("h1")
+body.select("h1").text("Títol!")
+```
 
 ** Veure que ara, el que retorna D3 és l'element text, de manera que el method chaining retorna coses diferents en funció del que fem
