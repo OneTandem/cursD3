@@ -41,7 +41,8 @@ d3.select("body”)
 * Crear variable amb el body
 ```var body = d3.select("body")```
 
-* Crear un ```h1```
+* Crear un h1
+
 ```
 body.append("h1")
 body.select("h1").text("Títol!")
