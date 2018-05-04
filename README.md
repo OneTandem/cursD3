@@ -36,7 +36,7 @@ paragraph.style("background-color", "lightblue").style("color", "green")
 d3.select("body”)
 		.append("p”)
 		.text("Hola bon dia! Sóc un paràgraf creat en D3!")
-		```
+```
 
 * Crear variable amb el body
 ```var body = d3.select("body")```
