@@ -13,7 +13,7 @@ https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/
 * Crear un ```<p>```, i sel·leccionar-lo des de la consola
 ```d3.select("p”)```
 
-* Mostrar que D3 retorna un Array
+* D3 retorna un Array!
 * Repetir la sel·lecció i guardar-la a una variable
 ```var paragraph = d3.select("p")```
 
@@ -21,10 +21,13 @@ https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/
 ```paragraph.style("background-color", "lightblue")```
 
   * Ensenyar que el codi font no ha canviat, però si inspeccionem el DOM, sí que haurà canviat
+
 * Fer reload, i veure que s’ha perdut tot.
 * Mostrar method chaining
-```var paragraph = d3.select("p")
-paragraph.style("background-color", "lightblue").style("color", "green")```
+```
+var paragraph = d3.select("p")
+paragraph.style("background-color", "lightblue").style("color", "green")
+```
 
 * Explicar que cada crida de cada funció retorna la selecció
 
