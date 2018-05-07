@@ -19,9 +19,7 @@
 			.attr("width", 600)
 			.attr("height", 200);
 
-			// Call visualization with 2 datasets consecutively
-			updateChart([5, 10, 15]);
-			updateChart([20, 30]);
+		updateChart([5, 10, 15]);
 
 		function updateChart(data) {
 			radius.domain([0, d3.max(data)]);
