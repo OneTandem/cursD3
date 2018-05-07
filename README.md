@@ -34,8 +34,8 @@ paragraph.style("background-color", "lightblue").style("color", "green")
 * Crear un nou paràgraf i assignar-li text
 ```
 d3.select("body”)
-		.append("p”)
-		.text("Hola bon dia! Sóc un paràgraf creat en D3!")
+	.append("p”)
+	.text("Hola bon dia! Sóc un paràgraf creat en D3!")
 ```
 
 * Crear variable amb el body
@@ -49,3 +49,9 @@ body.select("h1").text("Títol!")
 ```
 
 ** Veure que ara, el que retorna D3 és l'element text, de manera que el method chaining retorna coses diferents en funció del que fem
+
+## SVG
+
+* Veure exemple de codi SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
+
+![alt text](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
