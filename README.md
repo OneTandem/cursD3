@@ -162,7 +162,7 @@ body.selectAll("p")
   + https://bl.ocks.org/mbostock/3808234
 
 ### Primer gràfic: Gràfic de barres horitzonals
-* Partir del template buit
+* Partir del [template buit](src/01_empty_template.html)
 * Crear un ```div#viz``` on posar la visualització
 
 ```
@@ -233,4 +233,9 @@ var gLinear = svg.append("g")
 
 ### Creative coding
 * https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
+
+## Webs de referència
+* https://bl.ocks.org/
+* http://blockbuilder.org
+* https://beta.observablehq.com/
 
