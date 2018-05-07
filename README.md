@@ -59,17 +59,75 @@ var h1 = body.select("h1").text("Títol!")
 
 ## Data joins
 
-* 
+* Assignem un array de dades a una sel·lecció = fem una __join__
+```
+var pes = body.selectAll("p")
+	.data(["Hello", "Goodbye"])
+
+```
+
+* A la nostra join li posarem un valor entre els tags amb la funció ```text()```
+
+```
+pes.text(function(d) { return d;})
+
+```
+
+Des de l'aparició d'ES6, es poden utilitzar 'arrow functions'
+```
+pes.text(d => {return d;})
+
+```
+
+* ```d```és la convenció per referir-nos a la data que ens entra
+
+* Com que ja teniem dos ```<p>```, ens ha canviat el seu contingut
+
+* Podem també accedir al número d'element amb el que estem treballant. Generalment s'utilitza la convenció ```i```
+
 ```
 body.selectAll("p")
 	.data(["Hello", "Goodbye"])
-	.enter()
-	.append("p")
-		.text(d => {return d;})
+		.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
 
 ```
 
+* Què passa si tinc més dades dels elements que tinc al DOM?
+
+* Les funcions ```enter()``` o ```exit()```ens permeten decidir què fer en aquests casos
+
 ![alt text](http://www.cs171.org/2016/assets/material/lab5/cs171-data-join.png?raw=true "D3 joins")
+
+* ```enter()``` ens retorna un Array amb tantes posicions com elements cal afegir al DOM per quadrar el número d'elements a les dades
+
+```
+body.selectAll("p")
+	.data(["Hello", "Goodbye", "Tercer element!"])
+	.enter()
+	.append("p")
+		.text((d) => {return d;})
+
+```
+
+* Què passa si en tenim menys?
+
+```
+body.selectAll("p")
+	.data(["Només un element!"])
+		.text((d, i) => {return d;})
+```
+
+* Ens ha canviat el valor del primer element, però seguim tenint 3 paràgrafs!
+
+* Cal fer servir ```exit()```
+
+```
+body.selectAll("p")
+	.data(["Només un element!"])
+		.text((d, i) => {return d;})
+	.exit()
+		.remove()
+```
 
 * Comentar demo de joins amb text: https://bl.ocks.org/mbostock/3808218
 
