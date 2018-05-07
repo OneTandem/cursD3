@@ -1,3 +1,14 @@
+- [Programació de visualitzacions per la web](#programaci--de-visualitzacions-per-la-web)
+  * [Introducció a D3](#introducci--a-d3)
+  * [Data binding](#data-binding)
+    + [Primer gràfic: Gràfic de barres horitzonals](#primer-gr-fic--gr-fic-de-barres-horitzonals)
+  * [SVG](#svg)
+  * [Càrrega i preparació de dades](#c-rrega-i-preparaci--de-dades)
+  * [Exemples reals](#exemples-reals)
+    + [Visualització de dades de sèries](#visualitzaci--de-dades-de-s-ries)
+    + [Creative coding](#creative-coding)
+  * [Webs de referència](#webs-de-refer-ncia)
+  
 # Programació de visualitzacions per la web
 ## Introducció a D3
 https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
