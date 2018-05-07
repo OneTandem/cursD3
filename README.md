@@ -10,7 +10,6 @@
   * [Webs de referència](#webs-de-refer-ncia)
 
 ## Introducció a D3
-https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
 
 * Crear pàgina HTML en blanc
 * Mostrar que amb Sublime puc fer "html + TAB”
@@ -248,4 +247,6 @@ var gLinear = svg.append("g")
 * https://bl.ocks.org/
 * http://blockbuilder.org
 * https://beta.observablehq.com/
+* Curs curt i bàsic de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
+
 
