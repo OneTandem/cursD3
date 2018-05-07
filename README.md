@@ -59,4 +59,4 @@ body.select("h1").text("Títol!")
 
 * Explorar i canviar codi SVG
 * Comentar ordre dels elements a SVG. SVG no té profunditat
-* Generació del mateix SVG utilitzant D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
+ * Generació del mateix SVG utilitzant D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
