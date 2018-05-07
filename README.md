@@ -196,12 +196,12 @@ var scale = d3.scaleLinear()
 
 * SVG és molt similar a HTML
 * Veure exemple de codi SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
-  * Comentar que tots els tags són autocontinguts, menys el __text__
+  * Tots els tags són autocontinguts, menys el __text__
 
 ![alt text](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
 
 * Explorar i canviar codi SVG
-* Comentar ordre dels elements a SVG. SVG no té profunditat
+* Els elements que formen part d'un SVG s'ordenen en profunditat en funció del seu ordre d'apració. L'últim és el que està a sobre dels demés. SVG no té profunditat (z-index)
  * Generació del mateix SVG utilitzant D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
 
  * Comentar-lo linia a linia i mostrar com __text__ s'afegeix de manera diferent perquè no és un tag autocontingut
@@ -228,4 +228,18 @@ var svg = d3.select("body")
 ```
 var dataset = [10, 20, 30, 40, 50]
  ```
+
+## Càrrega i preparació de dades
+
+* Els arrays de dades poden ser més complexes que simples valors de dades: https://github.com/alignedleft/scattered-scatterplot/blob/master/05_data_values.html
+
+
+## Exemples reals
+
+### Visualització de dades de sèries
+* Demo: http://www.vpascual.org/onetandem/series/
+* Codi: https://github.com/OneTandem/SeriesViz/blob/master/index.html
+
+### Creative coding
+* https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
 

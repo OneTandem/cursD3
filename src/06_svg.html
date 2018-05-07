@@ -3,10 +3,18 @@
 <head>
 	<meta charset="utf-8">
 	<title>Demo SVG</title>
+	<style type="text/css">
+		svg {
+			background-color: lightgray;
+		}
+	</style>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
 	<script type="text/javascript">
+		var radius = d3.scaleSqrt()			
+			.range([5, 20]);
+
 		var svg = d3.select("body").append("svg")
 			.attr("width", 600)
 			.attr("height", 200);
@@ -16,18 +24,20 @@
 			updateChart([20, 30]);
 
 		function updateChart(data) {
+			radius.domain([0, d3.max(data)]);
+
 			// Data-join (circle now contains the update selection)
 			var circle = svg.selectAll("circle")
 			    .data(data);
 
 			// Enter (initialize the newly added elements)
 			circle.enter().append("circle")
+				.merge(circle)
 			    .attr("class", "dot")
-			    .attr("fill", "#707086");
-
-			// Update (set the dynamic properties of the elements)
-			circle
-			    .attr("r", function(d) { return d; })
+			    .attr("fill", "#707086")
+			    .attr("r", function(d) { 
+			    	console.log(radius(d))
+			    	return radius(d); })
 			    .attr("cx", function(d, index) { return (index * 80) + 50 })
 			    .attr("cy", 80);
 
