@@ -149,7 +149,7 @@ body.selectAll("p")
 		.remove()
 ```
 
-* Update pattern: [Codi demo](02_update_pattern.html)
+* Update pattern: [Codi demo](src/02_update_pattern.html)
 
 * La funció merge ens permetrà treballar amb els elements visibles: enter + update. També afegirem una transició. _03_update_pattern2.html_
 
