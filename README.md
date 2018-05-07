@@ -17,20 +17,30 @@
 ```<meta charset="utf-8">```
 
 * Afegir al head el tag de D3
-```<script src="https://d3js.org/d3.v5.min.js"></script>```
+
+```
+<script src="https://d3js.org/d3.v5.min.js"></script>
+```
 
 * Obrir Developer Tools i fer un d3.version
 * Crear un ```<p>```, i sel·leccionar-lo des de la consola
-```d3.select("p")```
+
+```
+d3.select("p")
+```
 
 * ```d3.select``` ens permet sel·leccionar 1 element. ```d3.selectAll``` sel·lecciona __TOTS__ els elements
 
-* ```d3.serlect``` retorna un Array!
+* ```d3.select``` retorna un Array!
 * Repetir la sel·lecció i guardar-la a una variable
-```var paragraph = d3.select("p")```
+```
+var paragraph = d3.select("p")
+```
 
 * Canviar l’style del paràgraf
-```paragraph.style("background-color", "lightblue")```
+```
+paragraph.style("background-color", "lightblue")
+```
 
   * Ensenyar que el codi font no ha canviat, però si inspeccionem el DOM, sí que haurà canviat
 
@@ -51,7 +61,9 @@ d3.select("body")
 ```
 
 * Crear variable amb el body
-```var body = d3.select("body")```
+```
+var body = d3.select("body")
+```
 
 * Crear un h1
 
@@ -64,7 +76,10 @@ var h1 = body.select("h1").text("Títol!")
 
 * Comentar diferència entre .style i .attr
 
-* Afegir classe a h1 ```h1.attr("class", "header_blau")```
+* Afegir classe a h1 
+```
+h1.attr("class", "header_blau")
+```
 
 ## Data binding
 
@@ -72,7 +87,6 @@ var h1 = body.select("h1").text("Títol!")
 ```
 var pes = body.selectAll("p")
 	.data(["Hello", "Goodbye"])
-
 ```
 
 * Podem veure com, si inspeccionem les ```<p>``` del DOM, ara tenen una variable ```__data__``` associada
@@ -80,13 +94,11 @@ var pes = body.selectAll("p")
 
 ```
 pes.text(function(d) { return d;})
-
 ```
 
 Des de l'aparició d'ES6, es poden utilitzar 'arrow functions'
 ```
 pes.text(d => {return d;})
-
 ```
 
 * ```d```és la convenció per referir-nos a la data que ens entra
@@ -99,18 +111,16 @@ pes.text(d => {return d;})
 body.selectAll("p")
 	.data(["Hello", "Goodbye"])
 		.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
-
 ```
 
 * Podriem, per exemple, canviar la manera com pintem els paràgrafs en funció del seu índex
 
 ```
 body.selectAll("p")
-		.style("text-decoration", (d, i) => {
-			return (i%2 == 0) ? 'overline' : 'line-through'
-		})
-		.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
-
+	.style("text-decoration", (d, i) => {
+		return (i%2 == 0) ? 'overline' : 'line-through'
+	})
+	.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
 ```
 
 * Què passa si tinc més dades dels elements que tinc al DOM?
