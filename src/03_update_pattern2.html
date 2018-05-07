@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Update pattern 2 by @vpascual</title>
 	<script src="https://d3js.org/d3.v5.min.js"></script>
 </head>
 <body>
@@ -14,14 +14,16 @@
 			var sel = viz.selectAll("p")
 				.data(data);
 
+			// Enter: Nous elements
 			sel.enter()
 				.append("p")				
 				.style("color", "green")
-				.merge(sel)
+				.merge(sel) // barregem els nous amb els que ja existien
 				.text((d, i) => { return "i: " + i + " Valor: " + d})
 
 			sel.style("color", "grey");				
 
+			// Exit: Elements que cal treure
 			sel.exit()
 				.style("color", "red")
 				.transition()

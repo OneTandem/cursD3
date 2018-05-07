@@ -14,14 +14,17 @@
 			var sel = viz.selectAll("p")
 				.data(data);
 
+			// Enter: Nous elements
 			sel.enter()
 				.append("p")
 				.text((d, i) => { return "i: " + i + " Valor: " + d})
 				.style("color", "green");
 
+			// Update: Elements que ha estaven
 			sel.style("color", "grey")
 				.text((d, i) => { return "i: " + i + " Valor: " + d})	;
 
+			// Exit: Elements que cal treure
 			sel.exit()
 				.style("color", "red");
 		}

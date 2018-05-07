@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Barchart by @vpascual</title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+	<div id="viz"></div>
+	<script type="text/javascript">
+        // D3 code
+		const data = [18, 20, 25, 34, 100];
+		var scale = d3.scaleLinear()
+			.domain([0, d3.max(data)])
+			.range([0, 400]);
+
+		d3.select("#viz")
+			.selectAll("div")
+			.data(data)
+			.enter()
+			.append("div")
+				.style("width", (d) => { return scale(d) + "px"; })
+				.style("background-color", "steelblue")
+				.text((d) => { return d; })
+    </script>
+</body>
+</html>

@@ -12,7 +12,7 @@ https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/
 
 * Obrir Developer Tools i fer un d3.version
 * Crear un ```<p>```, i sel·leccionar-lo des de la consola
-```d3.select("p”)```
+```d3.select("p")```
 
 * ```d3.select``` ens permet sel·leccionar 1 element. ```d3.selectAll``` sel·lecciona __TOTS__ els elements
 
@@ -66,7 +66,8 @@ var pes = body.selectAll("p")
 
 ```
 
-* A la nostra join li posarem un valor entre els tags amb la funció ```text()```
+* Podem veure com, si inspeccionem les ```<p>``` del DOM, ara tenen una variable ```__data__``` associada
+* A la nostra sel·lecció li posarem un valor entre els tags amb la funció ```text()```
 
 ```
 pes.text(function(d) { return d;})
@@ -160,11 +161,31 @@ body.selectAll("p")
   + https://bl.ocks.org/mbostock/3808221
   + https://bl.ocks.org/mbostock/3808234
 
+### Primer gràfic: Gràfic de barres horitzonals
+* Partir del template buit
+* Crear un ```div#viz``` on posar la visualització
 
-* Les dades amb les que treballa D3 sempre són un array. Pot ser un array de moltes coses diferents
 ```
-var dataset = [10, 20, 30, 40, 50]
- ```
+var data = [100, 150, 250];
+
+d3.select("#viz")
+	.selectAll("div")
+	.data(data)
+	.enter()
+	.append("div")
+		.style("width", (d) => { return d + "px"; })
+		.style("background-color", "steelblue")
+		.text((d) => { return d; })
+```
+
+* No sempre podrem fer servir els mateixos valors per a marcar el valor de les visualitzacions
+* Les [escales](https://github.com/d3/d3-scale) ens ajuden a interpolar valors
+```
+var scale = d3.scaleLinear()
+	.domain([0, d3.max(data)])
+	.range([0, 400]);
+```
+* ```d3.max()``` és una de le múltiples [funcions](https://github.com/d3/d3-array) que D3 ens dona per treballar amb Arrays
 
 ## SVG
 
@@ -180,7 +201,7 @@ var dataset = [10, 20, 30, 40, 50]
 
  * Comentar-lo linia a linia i mostrar com __text__ s'afegeix de manera diferent perquè no és un tag autocontingut
 
-* Definitem un estil per assegurar-nos visualment de que tot funciona bé
+* Definitem un estil per assegurar-nos visualment que tot funciona bé
 ```
 <style type="text/css">
 	svg {
@@ -196,4 +217,10 @@ var svg = d3.select("body")
 		.attr("width", 600)
 		.attr("height", 600);
 ```
+
+
+* Les dades amb les que treballa D3 sempre són un array. Pot ser un array de moltes coses diferents
+```
+var dataset = [10, 20, 30, 40, 50]
+ ```
 
