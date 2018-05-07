@@ -25,7 +25,7 @@
 
 * ```d3.select``` ens permet sel·leccionar 1 element. ```d3.selectAll``` sel·lecciona __TOTS__ els elements
 
-* D3 retorna un Array!
+* ```d3.serlect``` retorna un Array!
 * Repetir la sel·lecció i guardar-la a una variable
 ```var paragraph = d3.select("p")```
 
