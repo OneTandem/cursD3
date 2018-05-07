@@ -187,6 +187,11 @@ var scale = d3.scaleLinear()
 ```
 * ```d3.max()``` és una de le múltiples [funcions](https://github.com/d3/d3-array) que D3 ens dona per treballar amb Arrays
 
+* Ara ja podem canviar el nostre codi de manera que el width de cada barra depengui de l'escala. [Demo barchart](src/05_barchart.html)
+
+* __Exercici__: Crea una visualització d'un gràfic de barres on, mitjançant la consola, puguis passar-li noves dades per a que s'actualitzi
+  * Nivell màster: utilitza transicions per a que les barres s'adeqüin als nous valors amb una animació
+
 ## SVG
 
 * SVG és molt similar a HTML
@@ -201,7 +206,7 @@ var scale = d3.scaleLinear()
 
  * Comentar-lo linia a linia i mostrar com __text__ s'afegeix de manera diferent perquè no és un tag autocontingut
 
-* Definitem un estil per assegurar-nos visualment que tot funciona bé
+* Definirem un estil per assegurar-nos visualment que tot funciona bé
 ```
 <style type="text/css">
 	svg {
