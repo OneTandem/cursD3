@@ -48,10 +48,15 @@ body.append("h1")
 body.select("h1").text("Títol!")
 ```
 
-** Veure que ara, el que retorna D3 és l'element text, de manera que el method chaining retorna coses diferents en funció del que fem
+ * Veure que ara, el que retorna D3 és l'element text, de manera que el method chaining retorna coses diferents en funció del que fem
 
 ## SVG
 
+* SVG és molt similar a HTML
 * Veure exemple de codi SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
 
 ![alt text](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
+
+* Explorar i canviar codi SVG
+* Comentar ordre dels elements a SVG. SVG no té profunditat
+* Generació del mateix SVG utilitzant D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
