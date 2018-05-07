@@ -149,11 +149,16 @@ body.selectAll("p")
 		.remove()
 ```
 
-* Update pattern: [Codi demo](src/02_update_pattern.html)
+* Update pattern: [Codi demo 02_update_pattern.html](src/02_update_pattern.html)
 
-* La funció merge ens permetrà treballar amb els elements visibles: enter + update. També afegirem una transició. _03_update_pattern2.html_
+* La funció merge ens permetrà treballar amb els elements visibles: enter + update. També afegirem una transició. [Codi demo 03_update_pattern2.html](src/03_update_pattern2.html)
 
-* Comentar demo de joins amb text: https://bl.ocks.org/mbostock/3808218
+* A vegades, volem poder reutilitzar elements: [Codi demo 04_update_pattern_keyjoin.html](04_update_pattern_keyjoin.html)
+
+* Comentar demo de joins amb text
+  + https://bl.ocks.org/mbostock/3808218
+  + https://bl.ocks.org/mbostock/3808221
+  + https://bl.ocks.org/mbostock/3808234
 
 
 * Les dades amb les que treballa D3 sempre són un array. Pot ser un array de moltes coses diferents
