@@ -206,28 +206,15 @@ var scale = d3.scaleLinear()
 
  * Comentar-lo linia a linia i mostrar com __text__ s'afegeix de manera diferent perquè no és un tag autocontingut
 
-* Definirem un estil per assegurar-nos visualment que tot funciona bé
-```
-<style type="text/css">
-	svg {
-		background-color: lightgray;
-	}
-</style>
-```
+* [Demo cercles en SVG](src/06_svg.html)
 
- * Creem el nostre element SVG
+* __Exercici__: Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+  * Hint: Podem crear dos grups d'SVG per facilitar-nos el càlcul de coordenades de la següent manera
+``` 
+var gSqrt = svg.append("g");
+var gLinear = svg.append("g")
+	.attr("transform", "translate(0,50)");
 ```
-var svg = d3.select("body")
-	.append("svg")
-		.attr("width", 600)
-		.attr("height", 600);
-```
-
-
-* Les dades amb les que treballa D3 sempre són un array. Pot ser un array de moltes coses diferents
-```
-var dataset = [10, 20, 30, 40, 50]
- ```
 
 ## Càrrega i preparació de dades
 
