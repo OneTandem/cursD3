@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script src="https://d3js.org/d3.v5.min.js"></script>
+</head>
+<body>
+	<div id="viz"></div>
+	<script type="text/javascript">
+		var viz = d3.select("#viz");
+
+		function update(data) {
+			var sel = viz.selectAll("p")
+				.data(data);
+
+			sel.enter()
+				.append("p")
+				.text((d, i) => { return "i: " + i + " Valor: " + d})
+				.style("color", "green");
+
+			sel.style("color", "grey")
+				.text((d, i) => { return "i: " + i + " Valor: " + d})	;
+
+			sel.exit()
+				.style("color", "red");
+		}
+
+
+	</script>
+</body>
+</html>

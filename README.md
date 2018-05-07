@@ -1,4 +1,4 @@
-# Progrmació de visualitzacions per la web
+# Programació de visualitzacions per la web
 ## Introducció a D3
 https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
 
@@ -57,9 +57,9 @@ var h1 = body.select("h1").text("Títol!")
 
 * Afegir classe a h1 ```h1.attr("class", "header_blau")```
 
-## Data joins
+## Data binding
 
-* Assignem un array de dades a una sel·lecció = fem una __join__
+* Assignem un array de dades a una sel·lecció = fem una sel·lecció i una __join__
 ```
 var pes = body.selectAll("p")
 	.data(["Hello", "Goodbye"])
@@ -92,6 +92,17 @@ body.selectAll("p")
 
 ```
 
+* Podriem, per exemple, canviar la manera com pintem els paràgrafs en funció del seu índex
+
+```
+body.selectAll("p")
+		.style("text-decoration", (d, i) => {
+			return (i%2 == 0) ? 'overline' : 'line-through'
+		})
+		.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
+
+```
+
 * Què passa si tinc més dades dels elements que tinc al DOM?
 
 * Les funcions ```enter()``` o ```exit()```ens permeten decidir què fer en aquests casos
@@ -119,8 +130,17 @@ body.selectAll("p")
 
 * Ens ha canviat el valor del primer element, però seguim tenint 3 paràgrafs!
 
-* Cal fer servir ```exit()```
+* Cal fer servir ```exit()```. Podem, per exemple, marcar-los en vermell
 
+```
+body.selectAll("p")
+	.data(["Només un element!"])
+		.text((d, i) => {return d;})
+	.exit()
+		.style("color", "red")
+```
+
+* O podem eliminar-los
 ```
 body.selectAll("p")
 	.data(["Només un element!"])
@@ -128,6 +148,10 @@ body.selectAll("p")
 	.exit()
 		.remove()
 ```
+
+* Update pattern: [Codi demo](02_update_pattern.html)
+
+* La funció merge ens permetrà treballar amb els elements visibles: enter + update. També afegirem una transició. _03_update_pattern2.html_
 
 * Comentar demo de joins amb text: https://bl.ocks.org/mbostock/3808218
 
