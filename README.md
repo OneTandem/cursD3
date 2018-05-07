@@ -216,6 +216,10 @@ var gLinear = svg.append("g")
 	.attr("transform", "translate(0,50)");
 ```
 
+* [Creació d'un scatter plot amb eixos de coordenades](src/07_scatter_plot.html)
+
+* Exemple de creació d'un gràfic de barres horitzontal: https://bl.ocks.org/mbostock/3885304
+
 ## Càrrega i preparació de dades
 
 * Els arrays de dades poden ser més complexes que simples valors de dades: https://github.com/alignedleft/scattered-scatterplot/blob/master/05_data_values.html
