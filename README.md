@@ -255,6 +255,7 @@ var gLinear = svg.append("g")
 
 ## Webs de referència
 * https://bl.ocks.org/
+* https://bl.ocks.org/mbostock
 * http://blockbuilder.org
 * https://beta.observablehq.com/
 * Curs curt i bàsic de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
