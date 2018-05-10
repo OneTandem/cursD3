@@ -223,37 +223,37 @@ d3.selectAll(".bar")
 * En este caso estamos utilizando los propios valores para definir su anchura, pero a menduo querremos definir el tamaño de nuestra visualización y que ésta se adapte en función de los valores
 * Les [escalas](https://github.com/d3/d3-scale) nos ayudan a mapear valores entre un rango de valores en base al dominio de los mismo
 
-![](http://robdodson.me/d3-basics-an-introduction-to-scales/ "Mapeo entre valores de nuestro dominio y el rango de valores que esperamos")
+![](http://robdodson.me/content/images/2014/12/d3scale1.png "Mapeo entre valores de nuestro dominio y el rango de valores que esperamos")
 ```
 var scale = d3.scaleLinear()
 	.domain([0, d3.max(data)])
 	.range([0, 400]);
 ```
-* ```d3.max()``` rs una de le múltiples [funciones](https://github.com/d3/d3-array) que D3 nos da para trabajar con nuestros datos
+* ```d3.max()``` es una de le múltiples [funciones](https://github.com/d3/d3-array) que D3 nos da para trabajar con nuestros datos
 
-* Ara ja podem canviar el nostre codi de manera que el width de cada barra depengui de l'escala. [Demo barchart](src/05_barchart.html)
+* Ahora podemos cambiar nuestro código de modo que el width de cara barra dependa de la escala. [Demo barchart](src/05_barchart.html)
 
-* __Exercici__: Crea una visualització d'un gràfic de barres on, mitjançant la consola, puguis passar-li noves dades per a que s'actualitzi
-  * Nivell màster: utilitza transicions per a que les barres s'adeqüin als nous valors amb una animació
+* __Ejercicio__: Crea una visualización de un gráfico de barras donde, mediante la consola, puedas pasarle nuevos datos para que se actualice automáticamente
+  * Nivel máster: utiliza transiciones para que las barras hagan una transición del valor actual al nuevo y que las que desaparezcan se "desvanezcan"
 
 ## SVG
 
-* SVG és molt similar a HTML
-* Veure exemple de codi SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
-  * Tots els tags són autocontinguts, menys el __text__
+* SVG es muy similar a HTML
+* Ejemplo de código SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
+  * Todos los tags son autocontenidos excepto __text__
 
-![](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
+![](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenadas de SVG")
 
-* Explorar i canviar codi SVG
-* Els elements que formen part d'un SVG s'ordenen en profunditat en funció del seu ordre d'apració. L'últim és el que està a sobre dels demés. SVG no té profunditat (z-index)
- * Generació del mateix SVG utilitzant D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
+* Explorar y cambiar el código SVG
+* Los elementos que forman parte de un SVG se ordenand en profundidad en función de su orden de aparición. SVG no tiene profundidad (z-index)
+ * Podemos crear el mismo código SVG utilizando D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
 
- * Comentar-lo linia a linia i mostrar com __text__ s'afegeix de manera diferent perquè no és un tag autocontingut
+* Comentar la [demo de circulos en SVG](src/06_svg.html)
 
-* [Demo cercles en SVG](src/06_svg.html)
-
-* __Exercici__: Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+* __Ejercicio__: Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
   * Hint: Podem crear dos grups d'SVG per facilitar-nos el càlcul de coordenades de la següent manera
+
+ ![](img/ex_02.png "Sistema de coordenadas de SVG")
 ``` 
 var gSqrt = svg.append("g");
 var gLinear = svg.append("g")
