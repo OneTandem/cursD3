@@ -250,39 +250,39 @@ var scale = d3.scaleLinear()
 
 * Comentar la [demo de circulos en SVG](src/06_svg.html)
 
-* __Ejercicio__: Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
-  * Hint: Podem crear dos grups d'SVG per facilitar-nos el càlcul de coordenades de la següent manera
+* __Ejercicio__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+  * Hint: Es aconsejable crear dos grupos (```g```) para separar las dos lineas de círuclos
 
- ![](img/ex_02.png "Sistema de coordenadas de SVG")
+ ![](img/ex02.png "Sistema de coordenadas de SVG")
 ``` 
 var gSqrt = svg.append("g");
 var gLinear = svg.append("g")
 	.attr("transform", "translate(0,50)");
 ```
 
-* [Creació d'un scatter plot amb eixos de coordenades](src/07_scatter_plot.html)
+* [Creación de un scatter plot con ejes de coordenadas](src/07_scatter_plot.html)
 
-* Exemple de creació d'un gràfic de barres horitzontal: https://bl.ocks.org/mbostock/3885304
+* Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
 
-## Càrrega i preparació de dades
+## Carga y preparación de datos
 
-* Els arrays de dades poden ser més complexes que simples valors de dades: https://github.com/alignedleft/scattered-scatterplot/blob/master/05_data_values.html
+* Los arrays de datos pueden ser más complejos que simples valores: https://github.com/alignedleft/scattered-scatterplot/blob/master/05_data_values.html
 
 
-## Exemples reals
+## Ejemplos reales
 
-### Visualització de dades de sèries
+### Visualización de datos de series
 * Demo: http://www.vpascual.org/onetandem/series/
-* Codi: https://github.com/OneTandem/SeriesViz/blob/master/index.html
+* Códi: https://github.com/OneTandem/SeriesViz/blob/master/index.html
 
 ### Creative coding
 * https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
 
-## Webs de referència
+## Webs de referencia
 * https://bl.ocks.org/
 * https://bl.ocks.org/mbostock
 * http://blockbuilder.org
 * https://beta.observablehq.com/
-* Curs curt i bàsic de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
+* Curso curto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
 
 
