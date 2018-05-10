@@ -24,19 +24,17 @@
 		function updateChart(data) {
 			radius.domain([0, d3.max(data)]);
 
-			// Data-join (circle now contains the update selection)
+			// Hacemos el binding con los datos
 			var circle = svg.selectAll("circle")
 			    .data(data);
 
-			// Enter (initialize the newly added elements)
+			// Añadimos los nuevos elementos
 			circle.enter().append("circle")
 				.merge(circle)
 			    .attr("class", "dot")
 			    .attr("fill", "#707086")
-			    .attr("r", function(d) { 
-			    	console.log(radius(d))
-			    	return radius(d); })
-			    .attr("cx", function(d, index) { return (index * 80) + 50 })
+			    .attr("r", (d) => { return radius(d); })
+			    .attr("cx", (d, i) => { return (i * 80) + 50 })
 			    .attr("cy", 80);
 
 			// Exit
