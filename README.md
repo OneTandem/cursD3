@@ -252,17 +252,27 @@ var scale = d3.scaleLinear()
 
 * __Ejercicio__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
   * Hint: Es aconsejable crear dos grupos (```g```) para separar las dos lineas de círuclos
-
- ![](img/ex02.png "Sistema de coordenadas de SVG")
 ``` 
 var gSqrt = svg.append("g");
 var gLinear = svg.append("g")
 	.attr("transform", "translate(0,50)");
 ```
+ ![](img/ex02.png "Sistema de coordenadas de SVG")
 
-* [Creación de un scatter plot con ejes de coordenadas](src/07_scatter_plot.html)
+* Vamos a crear un gráfico de barras
+  * Creamos un barchart en SVG: https://github.com/alignedleft/d3-book/blob/master/chapter_06/13_making_a_bar_chart_rects.html
+  * Asignamos a cada barra su posición correcta: https://github.com/alignedleft/d3-book/blob/master/chapter_06/14_making_a_bar_chart_offset.html
+  * Aprovecharemos toda la anchura para crear el gráfico: https://github.com/alignedleft/d3-book/blob/master/chapter_06/16_making_a_bar_chart_widths.html
+  * [Cambiaremos la altura en base al valor del dato](src/07_barchart_svg.html)
+  * Tenemos que corregir la posición ```y``` y la altura de las barras en función del sistema de coordenadas de SVG: https://github.com/alignedleft/d3-book/blob/master/chapter_06/17_making_a_bar_chart_heights.html
+  * Utilizaremos una escala para calcular las altura: [Código](src/08_barchart_scale.html)
+  * Pondremos una etiqueta con el color de cada barra: https://github.com/alignedleft/d3-book/blob/master/chapter_06/20_making_a_bar_chart_labels.html
+  * Centramos la etiqueta con el color de cada barra: https://github.com/alignedleft/d3-book/blob/master/chapter_06/21_making_a_bar_chart_aligned.html
+  * Añadimos el eje de las X: [Código](src/09_barchart_axis.html)
 
 * Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
+
+* [Creación de un scatter plot con ejes de coordenadas](src/10_scatter_plot.html)
 
 ## Carga y preparación de datos
 
