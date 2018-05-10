@@ -9,103 +9,119 @@
     + [Creative coding](#creative-coding)
   * [Webs de referència](#webs-de-refer-ncia)
 
-## Introducció a D3
 
-* Crear pàgina HTML en blanc
-* Mostrar que amb Sublime puc fer "html + TAB”
-* Afegir charset al head
+## Prerequisitos
+
+Para poder trabajar con D3, necesitaremos disponer de un servidor web local. Les siguientes webs explican como hacerlo: 
+* https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
+* https://gist.github.com/jgravois/5e73b56fa7756fd00b89
+
+## Introducción a D3
+
+* Crear pàgina HTML en blanco
+* Sublime Text: "html + TAB”
+* Añadir charset al head
 ```<meta charset="utf-8">```
 
-* Afegir al head el tag de D3
-
+* Añadir al head el tag de D3
 ```
 <script src="https://d3js.org/d3.v5.min.js"></script>
 ```
 
-* Obrir Developer Tools i fer un d3.version
-* Crear un ```<p>```, i sel·leccionar-lo des de la consola
+* Abrir Developer Tools y vaidar la versión de D3
+```
+d3.version
+```
 
+Añadiremos a nuestro código un estil de CSS
+```
+<style type="text/css">
+	.blue {
+		background-color: lightblue;
+	}
+</style>
+```
+
+* Crear un ```<p>```, y seleccionarlo des de la consola
 ```
 d3.select("p")
 ```
 
-* ```d3.select``` ens permet sel·leccionar 1 element. ```d3.selectAll``` sel·lecciona __TOTS__ els elements
+* ```d3.select``` nos permite seleccionar un elemento. ```d3.selectAll``` selecciona __TODOS__ los elementos
 
-* ```d3.select``` retorna un Array!
-* Repetir la sel·lecció i guardar-la a una variable
+* ```d3.select``` nos devuelve un array
+
+* Repetir la sel·lecció y guardarla a una variable
 ```
 var paragraph = d3.select("p")
 ```
 
-* Canviar l’style del paràgraf
+* Canviar el style del párrafo
 ```
 paragraph.style("background-color", "lightblue")
 ```
 
-  * Ensenyar que el codi font no ha canviat, però si inspeccionem el DOM, sí que haurà canviat
+  * El código fuente no ha cambiado, pero el DOM si
 
-* Fer reload, i veure que s’ha perdut tot.
-* Mostrar method chaining
+* Con reload, volvemos a lo mismo que contiene el fichero HTML.
+* Mostrar "method chaining"
 ```
 var paragraph = d3.select("p")
 paragraph.style("background-color", "lightblue").style("color", "green")
 ```
 
-* Explicar que cada crida de cada funció retorna la selecció
+* Para que el "method chaining", cada método debe devolver un objeto. Debemos dominar qué hace cada método para ser conscientes de qué hacemos cuando encadenamos llamadas
 
-* Crear un nou paràgraf i assignar-li text
+* Crear un nuevo párrafo y asignarle un texto
 ```
 d3.select("body")
 	.append("p")
-	.text("Hola bon dia, sóc un paràgraf")
+	.text("Hola bon dia, soy un párrafo")
 ```
 
-* Crear variable amb el body
+* Crearemos una variable con el "body", y aquí iremos añadiendo nuevos elementos
 ```
 var body = d3.select("body")
 ```
 
 * Crear un h1
-
 ```
 body.append("h1")
 var h1 = body.select("h1").text("Títol!")
 ```
+   * La función h1 nos devuelve una selección que contiene el elemento h1
 
-   * Veure que ara, el que retorna D3 és l'element text, de manera que el method chaining retorna coses diferents en funció del que fem
+* Diferencias entre .style y .attr
 
-* Comentar diferència entre .style i .attr
-
-* Afegir classe a h1 
+* Añadiremos la clase ```blue``` a nuestro h1 y veremos que se aplica el estilo que habíamos definido previamente
 ```
-h1.attr("class", "header_blau")
+h1.attr("class", "blue")
 ```
 
 ## Data binding
 
-* Assignem un array de dades a una sel·lecció = fem una sel·lecció i una __join__
+* Asignaremos un array de datos a una selección mediante la función ```data```. Esto en D3 se le llama hacer _data binding_ 
 ```
 var pes = body.selectAll("p")
 	.data(["Hello", "Goodbye"])
 ```
 
-* Podem veure com, si inspeccionem les ```<p>``` del DOM, ara tenen una variable ```__data__``` associada
-* A la nostra sel·lecció li posarem un valor entre els tags amb la funció ```text()```
-
+* Si inspeccionamos el valor de ```pes``` en la consola, veremos que tienen un atributo ```__data__``` associado
+* A nuestra selección le pondremos un valor entre los tags ```p``` con la función ```text()``` creando una función que es capaz de recuperar el dato asociado a la selección
 ```
 pes.text(function(d) { return d;})
 ```
 
-Des de l'aparició d'ES6, es poden utilitzar 'arrow functions'
+Des de la aparición de ES6, podemos utilizar 'arrow functions' que simplifican el código
 ```
 pes.text(d => {return d;})
 ```
 
-* ```d```és la convenció per referir-nos a la data que ens entra
+* ```d``` es la convención para referirnos a los datos asociados a cada elemento seleccionado
 
-* Com que ja teniem dos ```<p>```, ens ha canviat el seu contingut
+* Como ya disponíamos de dos ```<p>```, hemos cambiado su texto
 
-* Podem també accedir al número d'element amb el que estem treballant. Generalment s'utilitza la convenció ```i```
+* Podemos también acceder al índice de cada uno de nuestros elementos seleccionados. Generalmente se utiliza la convención ```i```
 
 ```
 body.selectAll("p")
@@ -113,7 +129,7 @@ body.selectAll("p")
 		.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
 ```
 
-* Podriem, per exemple, canviar la manera com pintem els paràgrafs en funció del seu índex
+* Cambiaremos, de manera dinámica, el texto de cada párrafo
 
 ```
 body.selectAll("p")
@@ -123,13 +139,13 @@ body.selectAll("p")
 	.text((d, i) => {return 'Element: ' + i + ' Valor: ' + d;})
 ```
 
-* Què passa si tinc més dades dels elements que tinc al DOM?
+* Pero, qué pasa si tenemos más datos que elementos existentes en mi DOM?
 
-* Les funcions ```enter()``` o ```exit()```ens permeten decidir què fer en aquests casos
+* Las funciones ```enter()``` y ```exit()``` no permiten decidir qué hacer en esos casos
 
-![alt text](http://www.cs171.org/2016/assets/material/lab5/cs171-data-join.png?raw=true "D3 joins")
+![](http://www.cs171.org/2016/assets/material/lab5/cs171-data-join.png?raw=true "D3 joins")
 
-* ```enter()``` ens retorna un Array amb tantes posicions com elements cal afegir al DOM per quadrar el número d'elements a les dades
+* ```enter()``` nos devolverá un Array con tantas posiciones como elementos debemos añadir al DOM para cuadrar el número de elementos seleccionados con los datos
 
 ```
 body.selectAll("p")
@@ -140,17 +156,17 @@ body.selectAll("p")
 
 ```
 
-* Què passa si en tenim menys?
+* Y si tenemos menos elementos?
 
 ```
 body.selectAll("p")
-	.data(["Només un element!"])
+	.data(["Only one element!"])
 		.text((d, i) => {return d;})
 ```
 
-* Ens ha canviat el valor del primer element, però seguim tenint 3 paràgrafs!
+* Con este código D3 ha cambiado solo el valor del primer elemento, pero seguimos teniendo 3 ```p``` en el DOM.
 
-* Cal fer servir ```exit()```. Podem, per exemple, marcar-los en vermell
+* Con la función ```exit()``` podremos marcarlos en rojo
 
 ```
 body.selectAll("p")
@@ -160,7 +176,7 @@ body.selectAll("p")
 		.style("color", "red")
 ```
 
-* O podem eliminar-los
+* O podemos eliminarlos
 ```
 body.selectAll("p")
 	.data(["Només un element!"])
@@ -169,11 +185,11 @@ body.selectAll("p")
 		.remove()
 ```
 
-* Update pattern: [Codi demo 02_update_pattern.html](src/02_update_pattern.html)
+* Update pattern: [Código demo 02_update_pattern.html](src/02_update_pattern.html)
 
-* La funció merge ens permetrà treballar amb els elements visibles: enter + update. També afegirem una transició. [Codi demo 03_update_pattern2.html](src/03_update_pattern2.html)
+* La función ```merge``` nos permitirá trabajar con los elementos visibles: enter + update. En este código añadiremos también una transición. [Código demo 03_update_pattern2.html](src/03_update_pattern2.html)
 
-* A vegades, volem poder reutilitzar elements: [Codi demo 04_update_pattern_keyjoin.html](04_update_pattern_keyjoin.html)
+* Podemos ver también como, con el segundo parámetro de la función ```data```, podemos identificar los elementos que añadiremos al DOM de manera única para poder así reutilizarlos: [Código demo 04_update_pattern_keyjoin.html](04_update_pattern_keyjoin.html)
 
 * Comentar demo de joins amb text
   + https://bl.ocks.org/mbostock/3808218
@@ -181,8 +197,8 @@ body.selectAll("p")
   + https://bl.ocks.org/mbostock/3808234
 
 ### Primer gràfic: Gràfic de barres horitzonals
-* Partir del [template buit](src/01_empty_template.html)
-* Crear un ```div#viz``` on posar la visualització
+* Partir del [template vacio](src/01_empty_template.html)
+* Crear un ```div#viz``` donde podnremos nuestra visualización
 
 ```
 var data = [100, 150, 250];
@@ -192,19 +208,28 @@ d3.select("#viz")
 	.data(data)
 	.enter()
 	.append("div")
+		.attr("class", "bar")
 		.style("width", (d) => { return d + "px"; })
 		.style("background-color", "steelblue")
-		.text((d) => { return d; })
+		.style("min-height", "20px");		
 ```
 
-* No sempre podrem fer servir els mateixos valors per a marcar el valor de les visualitzacions
-* Les [escales](https://github.com/d3/d3-scale) ens ajuden a interpolar valors
+* Le añadiremos texto a nuestras barras y veremos que podemos hacer una selección mediante la clase asignada a nuestros elementos utilizando un punto
+```
+d3.selectAll(".bar")
+	.text((d) => { return d; })
+```
+
+* En este caso estamos utilizando los propios valores para definir su anchura, pero a menduo querremos definir el tamaño de nuestra visualización y que ésta se adapte en función de los valores
+* Les [escalas](https://github.com/d3/d3-scale) nos ayudan a mapear valores entre un rango de valores en base al dominio de los mismo
+
+![](http://robdodson.me/d3-basics-an-introduction-to-scales/ "Mapeo entre valores de nuestro dominio y el rango de valores que esperamos")
 ```
 var scale = d3.scaleLinear()
 	.domain([0, d3.max(data)])
 	.range([0, 400]);
 ```
-* ```d3.max()``` és una de le múltiples [funcions](https://github.com/d3/d3-array) que D3 ens dona per treballar amb Arrays
+* ```d3.max()``` rs una de le múltiples [funciones](https://github.com/d3/d3-array) que D3 nos da para trabajar con nuestros datos
 
 * Ara ja podem canviar el nostre codi de manera que el width de cada barra depengui de l'escala. [Demo barchart](src/05_barchart.html)
 
@@ -217,7 +242,7 @@ var scale = d3.scaleLinear()
 * Veure exemple de codi SVG: https://github.com/alignedleft/scattered-scatterplot/blob/master/03_svg.html
   * Tots els tags són autocontinguts, menys el __text__
 
-![alt text](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
+![](https://www.vanseodesign.com/blog/wp-content/uploads/2015/03/wpid-svg-coordinate-system.png "Sistema de coordenades de SVG")
 
 * Explorar i canviar codi SVG
 * Els elements que formen part d'un SVG s'ordenen en profunditat en funció del seu ordre d'apració. L'últim és el que està a sobre dels demés. SVG no té profunditat (z-index)
