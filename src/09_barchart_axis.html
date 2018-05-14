@@ -22,10 +22,11 @@
 							11, 12, 15, 20, 18, 17, 16, 18, 23, 25 ];
 
 			var barHeight = d3.scaleLinear()
-				.domain([0, d3.max(dataset)])
+				.domain([0, d3.max(dataset) * 1.1])
 				.range([h, 0]);
 
 			var leftAxis = d3.axisLeft(barHeight)
+				.ticks(5);
 			
 			//Create SVG element
 			var svg = d3.select("body")

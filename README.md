@@ -1,13 +1,15 @@
 # Programació de visualitzacions per la web
-  * [Introducció a D3](#introducci--a-d3)
+  * [Prerequisitos](#prerequisitos)
+  * [Introducción a D3](#introducci-n-a-d3)
   * [Data binding](#data-binding)
     + [Primer gràfic: Gràfic de barres horitzonals](#primer-gr-fic--gr-fic-de-barres-horitzonals)
   * [SVG](#svg)
-  * [Càrrega i preparació de dades](#c-rrega-i-preparaci--de-dades)
-  * [Exemples reals](#exemples-reals)
-    + [Visualització de dades de sèries](#visualitzaci--de-dades-de-s-ries)
+  * [Carga y preparación de datos](#carga-y-preparaci-n-de-datos)
+  * [Ejemplos reales](#ejemplos-reales)
+    + [Visualización de datos de series](#visualizaci-n-de-datos-de-series)
     + [Creative coding](#creative-coding)
-  * [Webs de referència](#webs-de-refer-ncia)
+  * [Webs de referencia](#webs-de-referencia)
+
 
 
 ## Prerequisitos
@@ -18,7 +20,7 @@ Para poder trabajar con D3, necesitaremos disponer de un servidor web local. Les
 
 ## Introducción a D3
 
-* Crear pàgina HTML en blanco
+* Crear página HTML en blanco
 * Sublime Text: "html + TAB”
 * Añadir charset al head
 ```<meta charset="utf-8">```
