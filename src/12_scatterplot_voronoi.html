@@ -4,11 +4,7 @@
 		<meta charset="utf-8">
 		<title>D3: Axes</title>
 		<script src="https://d3js.org/d3.v5.min.js"></script>
-		<style type="text/css">
-			svg {
-				background-color: #ccc;
-			}
-			
+		<style type="text/css">		
 			.axis path,
 			.axis line {
 				fill: none;
@@ -19,6 +15,10 @@
 			.axis text {
 				font-family: sans-serif;
 				font-size: 11px;
+			}
+
+			circle {
+				fill: steelblue;
 			}
 		</style>
 	</head>
@@ -128,13 +128,13 @@
 
 			function mouseOver(element) {
 				d3.select(element)
-					.attr("fill", "red")
+					.style("fill", "red")
 					.attr("r", 4);
 			}
 
 			function mouseOut(element) {
 				d3.select(element)
-		   			.attr("fill", "black")
+		   			.style("fill", "steelblue")
 		   			.attr("r", 2);
 			}
 		</script>

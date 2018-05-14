@@ -1,10 +1,13 @@
-# Programació de visualitzacions per la web
+# Programación de visualizaciones para la web
   * [Prerequisitos](#prerequisitos)
   * [Introducción a D3](#introducci-n-a-d3)
   * [Data binding](#data-binding)
-    + [Primer gràfic: Gràfic de barres horitzonals](#primer-gr-fic--gr-fic-de-barres-horitzonals)
+    + [Primer gráfico: Barra horizontales](#primer-gr-fico--barra-horizontales)
   * [SVG](#svg)
-  * [Carga y preparación de datos](#carga-y-preparaci-n-de-datos)
+    + [Creación de un gráfico de barras](#creaci-n-de-un-gr-fico-de-barras)
+    + [Creación de un scatter plot](#creaci-n-de-un-scatter-plot)
+    + [Creación de un linechart](#creaci-n-de-un-linechart)
+  * [Sistemas de fuerzas](#sistemas-de-fuerzas)
   * [Ejemplos reales](#ejemplos-reales)
     + [Visualización de datos de series](#visualizaci-n-de-datos-de-series)
     + [Creative coding](#creative-coding)
@@ -235,7 +238,7 @@ var scale = d3.scaleLinear()
 
 * Ahora podemos cambiar nuestro código de modo que el width de cara barra dependa de la escala. [Demo barchart](src/05_barchart.html)
 
-* __Ejercicio__: Crea una visualización de un gráfico de barras donde, mediante la consola, puedas pasarle nuevos datos para que se actualice automáticamente
+* __Ejercicio 01__: Crea una visualización de un gráfico de barras donde, mediante la consola, puedas pasarle nuevos datos para que se actualice automáticamente
   * Nivel máster: utiliza transiciones para que las barras hagan una transición del valor actual al nuevo y que las que desaparezcan se "desvanezcan"
 
 ## SVG
@@ -252,7 +255,7 @@ var scale = d3.scaleLinear()
 
 * Comentar la [demo de circulos en SVG](src/06_svg.html)
 
-* __Ejercicio__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+* __Ejercicio 02__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
   * Hint: Es aconsejable crear dos grupos (```g```) para separar las dos lineas de círuclos
 ``` 
 var gSqrt = svg.append("g");
@@ -261,7 +264,7 @@ var gLinear = svg.append("g")
 ```
  ![](img/ex02.png "Sistema de coordenadas de SVG")
 
-* Vamos a crear un gráfico de barras
+### Creación de un gráfico de barras
   * Creamos un barchart en SVG: https://github.com/alignedleft/d3-book/blob/master/chapter_06/13_making_a_bar_chart_rects.html
   * Asignamos a cada barra su posición correcta: https://github.com/alignedleft/d3-book/blob/master/chapter_06/14_making_a_bar_chart_offset.html
   * Aprovecharemos toda la anchura para crear el gráfico: https://github.com/alignedleft/d3-book/blob/master/chapter_06/16_making_a_bar_chart_widths.html
@@ -274,21 +277,31 @@ var gLinear = svg.append("g")
 
 * Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
 
+### Creación de un scatter plot
+
 * Ahora vamos a crear un scatter plot
   * Creación de un scatter plot con ejes de coordenadas [Código](src/10_scatter_plot.html)
   * Añadirenos un evento para poder manipular el elemento seleccionado: [Código](src/11_scatterplot_events.html)
   * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
-## Carga y preparación de datos
+* __Ejercicio 03__: Añade un valor random a la generación de datos del scatter plot y mapealo utilizando el radio de los círculos
 
-* Los arrays de datos pueden ser más complejos que simples valores: https://github.com/alignedleft/scattered-scatterplot/blob/master/05_data_values.html
+### Creación de un linechart
+* Ejemplo de de linechart que carga datos externos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/02_line_chart_axes.html
+   * Este ejemplo utiliza el dataset que se puede obtener des de i que cargaremos utilizando la función ```d3.csv```: https://raw.githubusercontent.com/alignedleft/d3-book/master/chapter_11/mauna_loa_co2_monthly_averages.csv
+   * Los linecharts tiene la peculiaridad de que un único elemento visual, la linea, representa muchos valores. Es por eso que en lugar de hacer el binding de datos con __data__, lo haremos con __datum__
+   * Para crear una linea necesitamos utilizar la función ```d3.line()```, que es la que se encarga de generar un __path__ de SVG
+      * Creación de un __path__: https://www.w3schools.com/graphics/svg_path.asp
+   * Podemos manipular nuestros datos para evitar los cortes que aparecen en los datos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/04_line_chart_adjusted.html
 
+## Sistemas de fuerzas
+* Force directed layout: https://bl.ocks.org/mbostock/4062045
 
 ## Ejemplos reales
 
 ### Visualización de datos de series
 * Demo: http://www.vpascual.org/onetandem/series/
-* Códi: https://github.com/OneTandem/SeriesViz/blob/master/index.html
+* Código: https://github.com/OneTandem/SeriesViz/blob/master/index.html
 
 ### Creative coding
 * https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
@@ -299,5 +312,6 @@ var gLinear = svg.append("g")
 * http://blockbuilder.org
 * https://beta.observablehq.com/
 * Curso curto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
+* Código del libro "Interactive Data Visualization for the Web": https://github.com/alignedleft/d3-book
 
 
