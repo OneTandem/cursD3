@@ -198,7 +198,7 @@ body.selectAll("p")
   + https://bl.ocks.org/mbostock/3808221
   + https://bl.ocks.org/mbostock/3808234
 
-### Primer gràfic: Gràfic de barres horitzonals
+### Primer gráfico: Barra horizontales
 * Partir del [template vacio](src/01_empty_template.html)
 * Crear un ```div#viz``` donde podnremos nuestra visualización
 
@@ -275,6 +275,8 @@ var gLinear = svg.append("g")
 * Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
 
 * [Creación de un scatter plot con ejes de coordenadas](src/10_scatter_plot.html)
+  * Añadirenos un evento para poder manipular el elemento seleccionado: [Código](src/11_scatterplot_events.html)
+  * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
 ## Carga y preparación de datos
 

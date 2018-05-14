@@ -37,7 +37,8 @@
 				var newNumber1 = Math.floor(Math.random() * maxRange);	//New random integer
 				var newNumber2 = Math.floor(Math.random() * maxRange);	//New random integer
 				dataset.push([newNumber1, newNumber2]);					//Add new number to array
-			}
+			}			
+
 			//Create scale functions
 			var xScale = d3.scaleLinear()
 								 .domain([0, d3.max(dataset, function(d) { return d[0]; })])
@@ -45,6 +46,12 @@
 			var yScale = d3.scaleLinear()
 								 .domain([0, d3.max(dataset, function(d) { return d[1]; })])
 								 .range([h - padding, padding]);
+
+			var voronoi = d3.voronoi()
+				.x(function(d) { return xScale(d[0]); })
+				.y(function(d) { return yScale(d[1]); })
+				.extent([[0, 0], [w, h]]);
+
 			//Define X axis
 			var xAxis = d3.axisBottom()
 							  .scale(xScale)
@@ -60,6 +67,9 @@
 						.append("svg")
 						.attr("width", w)
 						.attr("height", h);
+
+			var g = svg.append("g");
+			
 			//Create circles
 			svg.append("g")
 			   .attr("id", "circles")
@@ -67,13 +77,16 @@
 			   .data(dataset)
 			   .enter()
 			   .append("circle")
+			   .attr("class", d => { return "hola" + d[0] + "_" + d[1]; } )
 			   .attr("cx", function(d) {
 					return xScale(d[0]);
 			   })
 			   .attr("cy", function(d) {
 					return yScale(d[1]);
 			   })
-			   .attr("r", 2);
+			   .attr("r", 2)
+			   .on("mouseover", function() { mouseOver(d3.select(this).node())})
+			   .on("mouseout", function() { mouseOut(d3.select(this).node())})
 			
 			//Create X axis
 			svg.append("g")
@@ -86,6 +99,44 @@
 				.attr("class", "y axis")
 				.attr("transform", "translate(" + (padding - 5) + ",0)")
 				.call(yAxis);
+
+
+			//Create the voronoi grid
+			g.selectAll("path")
+				.data(voronoi.polygons(dataset)) //Use vononoi() with your dataset inside
+				.enter()
+				.append("path")
+					.attr("d", function(d, i) { return "M" + d.join("L") + "Z"; })
+					//Give each cell a unique class where the unique part corresponds
+					//to the circle classes
+					.attr("class", function(d,i) { return "hola" + d.data[0] + "_" + d.data[1]; } )
+					.on("mouseover", function(d) {
+						var elementClass = "hola" + d.data[0] + "_" + d.data[1]; 
+						var selectedElement = d3.selectAll("#circles").selectAll("." + elementClass);
+						var selectedElementNode = selectedElement.node();
+						mouseOver(selectedElementNode);
+					})
+					.on("mouseout",  function(d) {
+						var elementClass = "hola" + d.data[0] + "_" + d.data[1]; 
+						var selectedElement = d3.selectAll("#circles").selectAll("." + elementClass);
+						var selectedElementNode = selectedElement.node();
+						mouseOut(selectedElementNode);
+					})
+					//.style("stroke", "#2074A0") //If you want to look at the cells
+					.style("fill", "none")
+					.style("pointer-events", "all");					
+
+			function mouseOver(element) {
+				d3.select(element)
+					.attr("fill", "red")
+					.attr("r", 4);
+			}
+
+			function mouseOut(element) {
+				d3.select(element)
+		   			.attr("fill", "black")
+		   			.attr("r", 2);
+			}
 		</script>
 	</body>
 </html>

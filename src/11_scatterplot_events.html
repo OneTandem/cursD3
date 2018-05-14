@@ -73,7 +73,17 @@
 			   .attr("cy", function(d) {
 					return yScale(d[1]);
 			   })
-			   .attr("r", 2);
+			   .attr("r", 2)
+			   .on("mouseover", function(d) {
+			   		d3.select(this)
+			   			.attr("fill", "red")
+			   			.attr("r", 4);
+			   })
+			   .on("mouseout", function(d) {
+			   		d3.select(this)
+			   			.attr("fill", "black")
+			   			.attr("r", 2);
+			   });
 			
 			//Create X axis
 			svg.append("g")
