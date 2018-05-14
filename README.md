@@ -274,7 +274,8 @@ var gLinear = svg.append("g")
 
 * Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
 
-* [Creación de un scatter plot con ejes de coordenadas](src/10_scatter_plot.html)
+* Ahora vamos a crear un scatter plot
+  * Creación de un scatter plot con ejes de coordenadas [Código](src/10_scatter_plot.html)
   * Añadirenos un evento para poder manipular el elemento seleccionado: [Código](src/11_scatterplot_events.html)
   * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
