@@ -343,10 +343,10 @@ https://bl.ocks.org/mbostock/3019563
 * https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
 
 ## Webs de referencia
-* https://bl.ocks.org/
-* https://bl.ocks.org/mbostock
-* http://blockbuilder.org
-* https://beta.observablehq.com/
+* Página con ejemplos hechos en D3: https://bl.ocks.org/
+* Ejemplos del creador de D3: https://bl.ocks.org/mbostock
+* Página para poder editar y testear ejemplos de D3 en el navegador: http://blockbuilder.org
+* Notepads interactivos: https://beta.observablehq.com/
 * Curso corto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
 * Código del libro "Interactive Data Visualization for the Web": https://github.com/alignedleft/d3-book
 
