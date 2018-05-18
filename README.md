@@ -13,7 +13,7 @@
     + [Creative coding](#creative-coding)
   * [Webs de referencia](#webs-de-referencia)
 
-
+https://bl.ocks.org/mbostock/3019563
 
 ## Prerequisitos
 
@@ -253,16 +253,32 @@ var scale = d3.scaleLinear()
 * Los elementos que forman parte de un SVG se ordenand en profundidad en función de su orden de aparición. SVG no tiene profundidad (z-index)
  * Podemos crear el mismo código SVG utilizando D3: https://github.com/alignedleft/scattered-scatterplot/blob/master/04_svg_with_d3.html
 
+* __Ejercicio 02__: Crear el siguiente SVG en D3
+```
+<svg height="1000" width="800">
+  <circle cx="25" cy="25" r="20" stroke="black" stroke-width="2" fill="red" />
+  <rect x="10" y="50" width="100" height="50" fill="blue" stroke-width="2" stroke="black" opacity="0.5" rx="20" ry="20"/>
+  <ellipse cx="200" cy="80" rx="100" ry="50" fill="yellow" stroke="purple" stroke-width="2" />
+   <line x1="10" y1="100" x2="200" y2="200" stroke="green" stroke-width="5" />
+  <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+  <polyline points="20,20 40,25 60,40 80,120 120,140 200,180"
+  style="fill:none;stroke:black;stroke-width:3" />
+  <path d="M150 0 L75 200 L225 200 Z" />
+  <text x="0" y="315" fill="red" transform="rotate(330 20,40)">I love SVG</text>
+</svg>
+```
+![](img/ex02.png "Imagen resultante del código SVG")
+
 * Comentar la [demo de circulos en SVG](src/06_svg.html)
 
-* __Ejercicio 02__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+* __Ejercicio 03__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
   * Hint: Es aconsejable crear dos grupos (```g```) para separar las dos lineas de círuclos
 ``` 
 var gSqrt = svg.append("g");
 var gLinear = svg.append("g")
 	.attr("transform", "translate(0,50)");
 ```
- ![](img/ex02.png "Sistema de coordenadas de SVG")
+ ![](img/ex03.png "Sistema de coordenadas de SVG")
 
 ### Creación de un gráfico de barras
   * Creamos un barchart en SVG: https://github.com/alignedleft/d3-book/blob/master/chapter_06/13_making_a_bar_chart_rects.html
@@ -284,7 +300,7 @@ var gLinear = svg.append("g")
   * Añadirenos un evento para poder manipular el elemento seleccionado: [Código](src/11_scatterplot_events.html)
   * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
-* __Ejercicio 03__: Añade un valor random a la generación de datos del scatter plot y mapealo utilizando el radio de los círculos
+* __Ejercicio 04__: Añade un valor random a la generación de datos del scatter plot y mapealo utilizando el radio de los círculos
 
 ### Creación de un linechart
 * Ejemplo de de linechart que carga datos externos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/02_line_chart_axes.html
