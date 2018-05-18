@@ -269,9 +269,9 @@ var scale = d3.scaleLinear()
 ```
 ![](img/ex02_.png "Imagen resultante del código SVG")
 
-* Comentar la [demo de circulos en SVG](src/06_svg.html)
+* Vamos a ver [como crear varios círculos](src/06_svg.html)
 
-* __Ejercicio 03__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
+  * __Ejercicio 03__: Crear dos lineas de círculos que se adapten en función de los valores pasados a la función ```update``` por consola. La primera linea debe mostrar el tamaño de los círculos utilizando la escala cuadrática, y la segundo la escala lineal (d3.scaleLinear) Crear dues "linies" de cercles que responguin a l'hora amb dades noves. Una linia de cercles ha de mostrar el radi amb l'escala ```d3.scaleSqrt``` i l'altra amb ```d3.scaleLinear```
   * Hint: Es aconsejable crear dos grupos (```g```) para separar las dos lineas de círuclos
 ``` 
 var gSqrt = svg.append("g");
@@ -293,6 +293,24 @@ var gLinear = svg.append("g")
 
 * Ejemplo de un barchart vertical: https://bl.ocks.org/mbostock/3885304
 
+### Creación de un linechart
+* Ejemplo de de linechart que carga datos externos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/02_line_chart_axes.html
+
+   * __Ojo!__: este código está hecho en D3v4. Para poder utilizarlo con D3v5 hay que cambiar esta linea:
+   ```
+   d3.csv("mauna_loa_co2_monthly_averages.csv", rowConverter,function(data) {
+   ```
+   por esta
+   ```
+   d3.csv("mauna_loa_co2_monthly_averages.csv", rowConverter).then(function(data) {
+   ```
+
+   * Este ejemplo utiliza el dataset que se puede obtener des de i que cargaremos utilizando la función ```d3.csv```: https://raw.githubusercontent.com/alignedleft/d3-book/master/chapter_11/mauna_loa_co2_monthly_averages.csv
+   * Los linecharts tiene la peculiaridad de que un único elemento visual, la linea, representa muchos valores. Es por eso que en lugar de hacer el binding de datos con __data__, lo haremos con __datum__
+   * Para crear una linea necesitamos utilizar la función ```d3.line()```, que es la que se encarga de generar un __path__ de SVG
+      * Creación de un __path__: https://www.w3schools.com/graphics/svg_path.asp
+   * Podemos manipular nuestros datos para evitar los cortes que aparecen en los datos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/04_line_chart_adjusted.html
+
 ### Creación de un scatter plot
 
 * Ahora vamos a crear un scatter plot
@@ -301,14 +319,6 @@ var gLinear = svg.append("g")
   * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
 * __Ejercicio 04__: Añade un valor random a la generación de datos del scatter plot y mapealo utilizando el radio de los círculos
-
-### Creación de un linechart
-* Ejemplo de de linechart que carga datos externos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/02_line_chart_axes.html
-   * Este ejemplo utiliza el dataset que se puede obtener des de i que cargaremos utilizando la función ```d3.csv```: https://raw.githubusercontent.com/alignedleft/d3-book/master/chapter_11/mauna_loa_co2_monthly_averages.csv
-   * Los linecharts tiene la peculiaridad de que un único elemento visual, la linea, representa muchos valores. Es por eso que en lugar de hacer el binding de datos con __data__, lo haremos con __datum__
-   * Para crear una linea necesitamos utilizar la función ```d3.line()```, que es la que se encarga de generar un __path__ de SVG
-      * Creación de un __path__: https://www.w3schools.com/graphics/svg_path.asp
-   * Podemos manipular nuestros datos para evitar los cortes que aparecen en los datos: https://github.com/alignedleft/d3-book/blob/master/chapter_11/04_line_chart_adjusted.html
 
 ## Sistemas de fuerzas
 * Force directed layout: https://bl.ocks.org/mbostock/4062045
