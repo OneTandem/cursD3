@@ -13,8 +13,6 @@
     + [Creative coding](#creative-coding)
   * [Webs de referencia](#webs-de-referencia)
 
-https://bl.ocks.org/mbostock/3019563
-
 ## Prerequisitos
 
 Para poder trabajar con D3, necesitaremos disponer de un servidor web local. Les siguientes webs explican como hacerlo: 
@@ -284,6 +282,9 @@ var gLinear = svg.append("g")
 	.attr("transform", "translate(0,50)");
 ```
  ![](img/ex03.png "Sistema de coordenadas de SVG")
+
+### Convención de márgenes en D3
+https://bl.ocks.org/mbostock/3019563
 
 ### Creación de un gráfico de barras
   * Creamos un barchart en SVG: https://github.com/alignedleft/d3-book/blob/master/chapter_06/13_making_a_bar_chart_rects.html
