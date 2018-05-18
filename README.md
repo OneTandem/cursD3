@@ -21,6 +21,11 @@ Para poder trabajar con D3, necesitaremos disponer de un servidor web local. Les
 * https://developer.mozilla.org/en-US/docs/Learn/Common_questions/set_up_a_local_testing_server
 * https://gist.github.com/jgravois/5e73b56fa7756fd00b89
 
+### Introducción a HTML
+https://www.w3schools.com/html/html_intro.asp
+### Introducción a CSS
+https://www.w3schools.com/css/css_intro.asp
+
 ## Introducción a D3
 
 * Crear página HTML en blanco
@@ -319,6 +324,10 @@ var gLinear = svg.append("g")
   * Utilizaremos el algoritmo de Voronoi para facilitar la selección de nodos en el scatter [Código](src/12_scatterplot_voronoi.html)
 
 * __Ejercicio 04__: Añade un valor random a la generación de datos del scatter plot y mapealo utilizando el radio de los círculos
+* __Ejercicio 05__: Añade un slider y cambia el tamaño de todos los puntos en base al valor del mismo
+```
+<input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+```
 
 ## Sistemas de fuerzas
 * Force directed layout: https://bl.ocks.org/mbostock/4062045
@@ -337,7 +346,7 @@ var gLinear = svg.append("g")
 * https://bl.ocks.org/mbostock
 * http://blockbuilder.org
 * https://beta.observablehq.com/
-* Curso curto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
+* Curso corto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
 * Código del libro "Interactive Data Visualization for the Web": https://github.com/alignedleft/d3-book
 
 
