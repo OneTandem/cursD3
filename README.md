@@ -267,7 +267,7 @@ var scale = d3.scaleLinear()
   <text x="0" y="315" fill="red" transform="rotate(330 20,40)">I love SVG</text>
 </svg>
 ```
-![](img/ex02.png "Imagen resultante del código SVG")
+![](img/ex02_.png "Imagen resultante del código SVG")
 
 * Comentar la [demo de circulos en SVG](src/06_svg.html)
 
