@@ -335,7 +335,7 @@ https://bl.ocks.org/mbostock/3019563
 
 ## Ejemplos reales
 
-* [Visualización de datos de series] (http://www.vpascual.org/onetandem/series/). [Código: ](https://github.com/OneTandem/SeriesViz/blob/master/index.html)
+* [Visualización de datos de series](http://www.vpascual.org/onetandem/series/). [Código: ](https://github.com/OneTandem/SeriesViz/blob/master/index.html)
 
 * [Creative coding](https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf)
 
