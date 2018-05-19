@@ -335,12 +335,23 @@ https://bl.ocks.org/mbostock/3019563
 
 ## Ejemplos reales
 
-### Visualización de datos de series
-* Demo: http://www.vpascual.org/onetandem/series/
-* Código: https://github.com/OneTandem/SeriesViz/blob/master/index.html
+* [Visualización de datos de series] (http://www.vpascual.org/onetandem/series/). [Código: ](https://github.com/OneTandem/SeriesViz/blob/master/index.html)
 
-### Creative coding
-* https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf
+* [Creative coding](https://bl.ocks.org/vpascual/cdb2156b88539792d02cfaaab10efbaf)
+
+* [How the recession reshape the economy, in 255 charts](https://www.nytimes.com/interactive/2014/06/05/upshot/how-the-recession-reshaped-the-economy-in-255-charts.html)
+* A day in life of Americans
+  * http://projects.flowingdata.com/timeuse/
+  * http://rethinkingvis.com/visualizations/25
+  * https://flowingdata.com/2016/12/06/how-people-like-you-spend-their-time/
+  * http://flowingdata.com/2015/12/15/a-day-in-the-life-of-americans/
+
+* [Extensive Data Shows Punishing Reach of Racism for Black Boys](https://www.nytimes.com/interactive/2018/03/19/upshot/race-class-white-and-black-men.html)
+
+* [Evolución del ranking de Shanghai](http://sirislab.com/lab/rankings/shanghai/)
+
+* [Business School Explorer](http://sirislab.com/lab/rankings/business_schools/global_mba/)
+* [Map of Science](http://sirislab.com/lab/scientometrics/map_of_science/)
 
 ## Webs de referencia
 * Página con ejemplos hechos en D3: https://bl.ocks.org/
