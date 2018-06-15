@@ -356,6 +356,7 @@ https://bl.ocks.org/mbostock/3019563
 ## Webs de referencia
 * Página con ejemplos hechos en D3: https://bl.ocks.org/
 * Ejemplos del creador de D3: https://bl.ocks.org/mbostock
+* Interesante artículo sobre cómo aprender D3: https://medium.com/@enjalot/the-hitchhikers-guide-to-d3-js-a8552174733a
 * Página para poder editar y testear ejemplos de D3 en el navegador: http://blockbuilder.org
 * Notepads interactivos: https://beta.observablehq.com/
 * Curso corto y básico de D3: https://www.safaribooksonline.com/library/view/an-introduction-to/9781491906323/oreillyvideos2023599.html
